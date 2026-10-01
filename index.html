@@ -16,7 +16,16 @@
   header{display:flex;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
   header img{width:64px;height:64px;border-radius:50%}
   header h1{font-size:1.9rem;letter-spacing:4px;color:var(--acid)}
-  header .tag{margin-left:auto;color:var(--dim);font-size:.85rem;border:1px solid var(--line);padding:4px 12px;border-radius:99px}
+  .btn-sm{padding:10px 20px;font-size:.9rem}
+  code, .addr{font-family:Consolas,monospace;font-size:.85rem;background:#0a0f0b;border:1px solid var(--line);padding:2px 8px;border-radius:6px;word-break:break-all;color:var(--acid)}
+  .btn{display:inline-block;background:var(--acid2);color:#06130a;padding:14px 32px;border-radius:12px;font-weight:800;text-decoration:none;margin-top:8px;cursor:pointer;border:none;font-size:1.05rem;box-shadow:0 4px 14px #3fae5a44;transition:all .15s ease}
+  .btn:hover{background:var(--acid);transform:translateY(-2px);box-shadow:0 6px 20px #3fae5a66}
+  .btn:active{transform:translateY(0)}
+  .addr-link{display:inline-block;font-family:Consolas,monospace;font-size:.85rem;background:#0a0f0b;border:1px solid var(--line);padding:8px 10px;border-radius:6px;word-break:break-all;color:var(--acid);text-decoration:none;cursor:pointer}
+  .addr-link:hover{border-color:var(--acid2)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
+  .card h3{color:var(--acid);margin-bottom:10px;letter-spacing:1px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
   .hero{text-align:center;padding:56px 0 36px}
   .hero img{width:160px;height:160px;border-radius:50%;box-shadow:0 0 60px #3fae5a55}
   .hero h2{font-size:2.6rem;margin:18px 0 8px;letter-spacing:2px}
@@ -24,15 +33,6 @@
   .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0}
   .chip{border:1px solid var(--line);background:var(--panel);padding:8px 16px;border-radius:99px;font-size:.9rem}
   .chip b{color:var(--acid)}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin:14px 0}
-  .card h3{color:var(--acid);margin-bottom:10px;letter-spacing:1px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-  .btn-sm{padding:10px 20px;font-size:.9rem}
-  code, .addr{font-family:Consolas,monospace;font-size:.85rem;background:#0a0f0b;border:1px solid var(--line);padding:2px 8px;border-radius:6px;word-break:break-all;color:var(--acid)}
-  .btn{display:inline-block;background:var(--acid2);color:#06130a;padding:14px 32px;border-radius:12px;font-weight:800;text-decoration:none;margin-top:8px;cursor:pointer !important;position:relative;z-index:2;border:none;transition:all .15s ease;font-size:1.05rem;box-shadow:0 4px 14px #3fae5a44}
-  .btn:hover{background:var(--acid);transform:translateY(-2px);box-shadow:0 6px 20px #3fae5a66}
-  .btn:active{transform:translateY(0)}
-  .btn *{pointer-events:none}
   footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--dim);font-size:.85rem;text-align:center}
   .warn{border-color:#5c3a3a;color:#e0a0a0}
   table{width:100%;border-collapse:collapse;font-size:.92rem}
@@ -46,7 +46,7 @@
   <header>
     <img src="logo.svg" alt="ZOMBIE">
     <h1>ZOMBIE</h1>
-    <a class="btn btn-sm" style="margin-left:auto;margin-top:0" href="https://dedust.io/swap/TON/ZOMBIE" target="_blank">Купить $ZOMBIE</a>
+    <a class="btn btn-sm" style="margin-left:auto" href="https://dedust.io/swap/TON/ZOMBIE" onclick="return !window.open(this.href,'_blank')">Купить $ZOMBIE</a>
   </header>
 
   <div class="hero">
@@ -60,7 +60,7 @@
       <span class="chip">Ликвидность <b>DeDust</b></span>
       <span class="chip">Контракт <b>TEP-74</b></span>
     </div>
-    <a class="btn" href="https://dedust.io/swap/TON/ZOMBIE" target="_blank">Купить на DeDust ↗</a>
+    <a class="btn" href="https://dedust.io/swap/TON/ZOMBIE" onclick="return !window.open(this.href,'_blank')">Купить на DeDust ↗</a>
   </div>
 
   <div class="grid">
@@ -76,10 +76,10 @@
     </div>
     <div class="card">
       <h3>🧾 Контракт (mainnet)</h3>
-      <p style="color:var(--dim);font-size:.9rem;margin-bottom:8px">Jetton master (кликни для просмотра):</p>
-      <a class="addr" style="display:block;text-decoration:none;cursor:pointer;padding:8px" href="https://tonviewer.com/EQBD8tXhVGVlgCshqq5LBeH2Abs4Sb-Jh33OC2CbcrErKk3O" target="_blank">EQBD8tXhVGVlgCshqq5LBeH2Abs4Sb-Jh33OC2CbcrErKk3O ↗</a>
-      <p style="margin-top:12px">
-        <a class="btn" href="https://tonviewer.com/EQBD8tXhVGVlgCshqq5LBeH2Abs4Sb-Jh33OC2CbcrErKk3O" target="_blank">tonviewer ↗</a>
+      <p style="color:var(--dim);font-size:.9rem;margin-bottom:8px">Jetton master — кликни, чтобы открыть в Tonviewer:</p>
+      <a class="addr-link" href="https://tonviewer.com/EQBD8tXhVGVlgCshqq5LBeH2Abs4Sb-Jh33OC2CbcrErKk3O" onclick="return !window.open(this.href,'_blank')">EQBD8tXhVGVlgCshqq5LBeH2Abs4Sb-Jh33OC2CbcrErKk3O ↗</a>
+      <p style="margin-top:14px">
+        <a class="btn" href="https://tonviewer.com/EQBD8tXhVGVlgCshqq5LBeH2Abs4Sb-Jh33OC2CbcrErKk3O" onclick="return !window.open(this.href,'_blank')">Открыть в Tonviewer ↗</a>
       </p>
     </div>
     <div class="card">
@@ -103,5 +103,14 @@
 
   <footer>ZOMBIE Coin · 2026 · $ZOMBIE на TON</footer>
 </div>
+<script>
+// Фолбэк: если ни один способ открытия не сработал — обычный переход
+document.addEventListener('click', function(e) {
+  var a = e.target.closest('a[href]');
+  if (!a) return;
+  // в Telegram webview и похожих средах window.open запрещён — тогда просто идём по href
+  try { if (window.TelegramWebviewProxy || /Telegram/i.test(navigator.userAgent)) { e.preventDefault(); location.href = a.href; } } catch(err) {}
+}, true);
+</script>
 </body>
 </html>
